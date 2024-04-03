@@ -34,9 +34,9 @@ export default function FlexBox1() {
           gap: 2,
         }}
       >
-        <Paper>Typography 1</Paper>
-        <Paper>Typography 2</Paper>
-        <Paper>Typography 3</Paper>
+        <Paper>Typo</Paper>
+        <Paper>Typo</Paper>
+        <Paper>Typo</Paper>
       </Box>
     </div>
   )

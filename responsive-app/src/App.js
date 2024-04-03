@@ -5,8 +5,8 @@ import FlexBox1 from "./components/FlexBox1";
 function App() {
   return (
     <div>
-      {/* <ResponsiveButton/> */}
-      <FlexBox1/>
+      <ResponsiveButton/>
+      {/* <FlexBox1/> */}
     </div>
   );
 }
