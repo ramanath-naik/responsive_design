@@ -8,20 +8,17 @@ export default function FlexBox1() {
       <Box
         sx={{
           display: "flex",
-          justifyContent: 'space-evenly',
           flexDirection: 'row',
-          p: 1,
+          p: 2,
           borderRadius: 1,
           gap:2,
           bgcolor: 'yellow',
-          '@media (max-width: 600px)': {
-            flexDirection: 'column',
-          },
+          
         }}
       >
-        <Paper style={{backgroundColor:'lightgreen'}}>Typography 1</Paper>
-        <Paper sx={{backgroundColor: 'lightblue'}}>Typography 2</Paper>
-        <Paper sx={{bgcolor: 'lightsalmon'}}>Typography 3</Paper>
+        <Paper style={{backgroundColor:'lightgreen', flex: '1 0 700px'}}>Typography 1</Paper>
+        <Paper sx={{backgroundColor: 'lightblue',flex: '1 1 700px' }}>Typography 2</Paper>
+        <Paper sx={{bgcolor: 'lightsalmon', flex: '1 0 700px' }}>Typography 3</Paper>
       </Box>
       <Box
         sx={{
