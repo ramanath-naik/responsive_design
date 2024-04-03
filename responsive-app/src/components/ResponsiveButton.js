@@ -3,33 +3,52 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import { Box } from '@mui/material';
 import { Typography } from '@mui/material';
+import Paper from "@mui/material/Paper";
+
+
+const classes = {
+  root: {
+    flexGrow: 1
+  },
+  paper: {
+    padding: 20,
+    textAlign: "center",
+    color: "red"
+  }
+};
+
+function NestedGrid() {
+  return (
+    <>
+      <Grid item xs={4}>
+        <Paper style={classes.paper}>First Item</Paper>
+      </Grid>
+      <Grid item xs={4}>
+        <Paper style={classes.paper}>Second Item</Paper>
+      </Grid>
+      <Grid item xs={4}>
+        <Paper style={classes.paper}>Third Item</Paper>
+      </Grid>
+    </>
+  );
+}
 
 const ResponsiveButton = () => {
   return (
-    <Grid container spacing={3} columns={16}>
-        <Grid item xs={12} sm={6} md={3}>
-          <Box  bgcolor="primary.light" p={2}>
-          <Typography variant="body1" fontWeight={{ xs: 'normal', sm: 'bold', md: 'bold' }}>
-            This is the First Grid
-          </Typography>
-          </Box>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <Box bgcolor="secondary.light" p={2}>
-            This is the Second Grid
-          </Box>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <Box bgcolor="primary.light" p={2}>
-            This is the Third Grid
-          </Box>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <Box bgcolor="secondary.light" p={2}>
-            This is the Fourth Grid
-          </Box>
-        </Grid>
+    <div style={classes.root}>
+    <Grid container spacing={1}>
+      <Grid container item xs={12} spacing={3}>
+        {/*Render the InnerGrid as a child item */}
+        <NestedGrid />
       </Grid>
+      <Grid container item xs={12} spacing={3}>
+        <NestedGrid />
+      </Grid>
+      <Grid container item xs={12} spacing={3}>
+        <NestedGrid />
+      </Grid>
+    </Grid>
+  </div>
   );
 };
 
