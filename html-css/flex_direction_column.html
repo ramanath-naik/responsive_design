@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex Drection Column</title>
+  <style>
+    .box {
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        background-color: antiquewhite;
+    }
+    .box>* {
+        flex: 0 1 50px;     /* flex: 0 1 auto; */
+        border: 1px solid black;
+        text-align: center;
+        padding: 20px;
+        margin: 10px;
+        background-color: aquamarine;
+        border-radius: 6px;
+        /* line-height: 50px; */
+    }
+  </style>
+</head>
+<body>
+    <div class="box">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+        <div>Four</div>
+        <div>Five</div>
+        <div>Six</div>
+        <div>Seven</div>
+        <div>Eight</div>
+        <div>Nine</div>
+        <div>Ten</div>
+    </div>
+</body>
+</html>
