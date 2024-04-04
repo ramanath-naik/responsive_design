@@ -5,10 +5,19 @@
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  grid-template-rows: 100px 200px;
+  grid-template-rows: 100px 200px; 
   grid-gap: 10px;
   background-color: #2196F3;
   padding: 10px;
+  /*line-height: 100px will maintain text at the center, it will not disturb the text.*/
+ 
+  
+}
+
+@media screen and (min-width: 400px){
+  .grid-container{
+    grid-template-columns: auto;
+  }
 }
 
 .grid-container > div {
