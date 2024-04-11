@@ -1,12 +1,14 @@
 import React from "react";
 import ResponsiveButton from "./components/ResponsiveButton";
 import FlexBox1 from "./components/FlexBox1";
+import ClickCounter from "./components/ClickCounter";
+import HoverCounter from "./components/HoverCounter";
 
 function App() {
   return (
-    <div>
-      <ResponsiveButton/>
-      {/* <FlexBox1/> */}
+    <div style={{marginTop: '50px', textAlign:'center'}}>
+      <ClickCounter/>
+      <HoverCounter/>
     </div>
   );
 }
