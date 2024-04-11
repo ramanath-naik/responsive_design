@@ -2,27 +2,24 @@
 <html>
 <head>
 <style>
-h2.none {
-  display: none;
+.inner {
+    display: contents;
+    /* background-color: aquamarine; */
 }
-
-h1.hidden {
-  visibility: hidden;
-}
+/* .container {
+    display: contents;
+    background-color: rgb(127, 187, 255);
+} */
 </style>
 </head>
 <body>
 
-<h1>This is a visible heading</h1>
-<h2 class="none">This is a hidden heading</h2>
-<p>Notice that the h1 element with display: none; does not take up any space.</p>
-<br>
-<br>
-<br>
-
-<h1>This is a visible heading</h1>
-<h1 class="hidden">This is a hidden heading</h1>
-<p>Notice that the h1 element with display: none; does not take up any space.</p>
+<div class="container">
+    <div class="inner">
+        <p >This is a paragraph inside a div.</p>
+        <span>This is a span inside the same div.</span>
+    </div>
+</div>
 
 </body>
 </html>
