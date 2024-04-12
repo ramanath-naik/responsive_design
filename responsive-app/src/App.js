@@ -8,7 +8,7 @@ function App() {
   return (
     <div style={{marginTop: '50px', textAlign:'center'}}>
      <ReactMemoName name="Anand"/>
-     <ReactMemoMarks marks={90}/>
+     <ReactMemoMarks marks={80} subject="Maths"/>
     </div>
   );
 }
