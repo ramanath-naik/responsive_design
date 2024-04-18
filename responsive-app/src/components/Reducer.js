@@ -1,29 +1,56 @@
 import { useReducer } from "react";
-import React from "react";
+import {TiTick, TiTrash} from 'react-icons/ti';
+import { lReducer, formReducer } from "./ListReducers";
 
-const initialState=0;
+const Header = () => {
+  return (
+    <>
+      <header>
+        <h1>My Bucket List</h1>
+        <h2>(Using React's useReducer Hook)</h2>
+      </header>
+    </>
+  );
+};
 
-const reducer = (state, action) =>{
-    switch(action){
-        case "Increment" :
-            return state+1
-        case "Decrement" :
-            return state-1
-        default :
-            return state
-    }
+const Reducer = () => {
+  const[state, dispatch] = useReducer(lReducer, []);
+  const [wish, dispatchFormAction] = useReducer(formReducer, {
+      title: "",
+      by: ""
+  });
+  
+  const handleWish = (e) => {
+    e.preventDefault();
+    dispatchFormAction({
+      type: "INPUT_TEXT",
+      field: e.target.name,
+      payload: e.target.value
+    })
+  }
 
-}
-
-function Reducer() {
-   const [count, dispatch] = useReducer(reducer, initialState)
-    return(
+  return (
+    <>
+      <Header />
+      <div>
+        <ul>
+          {state && state.length> 0 && state.map((item) => (
+            <li key={item.id}>
+              <span style={{ textDecoration: item.isDone ? "line-through" : "" }}>
+                <strong>{item.title}</strong> is due by {item.by}</span>
+              <span><TiTick size={24} onClick={() => dispatch({type: "DONE_WISH", payload: item.id})} /></span>
+              <span><TiTrash size={24} onClick={() => dispatch({type: "REMOVE_WISH", payload: item.id})}/></span>
+            </li>
+          ))}
+        </ul>
         <div>
-            <h2>{count}</h2>
-            <button onClick={()=> dispatch("Increment")}>Increment</button>
-            <button onClick={()=> dispatch("Decrement")}>Decrement</button>
+          I want to do <input type="text" name="title" onChange={handleWish}/> by{" "}
+          <input type="date" name="by" onChange={handleWish} />
+          <button className="wishBtn" onClick={() => dispatch({type: "ADD_WISH", payload: wish})}>Make a Wish!</button>
         </div>
-    )
-}
+      </div>
+    </>
+  );
+};
 
 export default Reducer;
