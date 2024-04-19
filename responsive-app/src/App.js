@@ -1,13 +1,15 @@
 import React from "react";
 import ResponsiveButton from "./components/ResponsiveButton";
 import FlexBox1 from "./components/FlexBox1";
-import Reducer from "./components/Reducer";
+import AddTodo from "./components/AddTodo";
+import Todos from "./components/Todos";
 
 function App() {
 
   return (
     <div style={{marginTop: '50px', textAlign:'center'}}>
-      <Reducer/>
+     <AddTodo/>
+     <Todos/> 
     </div>
   );
 }
