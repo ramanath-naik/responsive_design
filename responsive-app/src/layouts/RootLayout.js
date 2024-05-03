@@ -9,6 +9,8 @@ export default function RootLayout() {
                 <h1>Router</h1>
                 <NavLink to='/'> Home</NavLink>
                 <NavLink to="/about" style={{paddingLeft:'20px'}}>About</NavLink> 
+                <NavLink to="/help" style={{paddingLeft:'20px'}}>Help</NavLink> 
+                <NavLink to="/careers" style={{paddingLeft:'20px'}}>Careers</NavLink> 
             </nav>
         </header>
         <main>
