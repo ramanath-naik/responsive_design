@@ -6,7 +6,7 @@ export default function Careers() {
   return (
     <div>
         {careers.map(career => (
-            <Link to="/" key={career.id}>
+            <Link to={career.id.toString()} key={career.id}>
                 <p>{career.title}</p>
                 <p>Based in {career.location}</p>
             </Link>
@@ -19,7 +19,7 @@ export default function Careers() {
 //Loader Function
 
  export const careersLoader = async () => {
-    const res = await fetch ('http://localhost:4000/careers')
+    const res = await fetch ('http://localhost:3001/careers')
 
     return res.json();
 
