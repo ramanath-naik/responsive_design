@@ -15,6 +15,11 @@ import CareerError from "./pages/CareerError";
 
 import { CookiesProvider } from 'react-cookie';
 import Cookie from './Cookie';
+import Caching from "./Caching";
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
+
+const queryClient = new QueryClient();
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -45,12 +50,18 @@ function App() {
 
   return (
   // <RouterProvider router={router}/>
-  <div style={{margin:'40px'}}>
-  <CookiesProvider>
-    <Cookie/>
-  </CookiesProvider>
-  </div>
+  // <div style={{margin:'20px'}}>
+  // <CookiesProvider>
+  //   <Cookie/>
+  // </CookiesProvider>
+  // </div>
   
+  <>
+   <QueryClientProvider client={queryClient}>
+    <Caching/>
+    <ReactQueryDevtools />
+    </QueryClientProvider>
+  </>
   );
 }
 
