@@ -12,6 +12,8 @@ function YourComponent() {
   // Set cookie
   const handleSetCookie = () => {
     setCookie("user", name, { path: "/" });
+    // setCookie('user', 'John Doe', { path: '/', maxAge: 3600, secure: true, sameSite: 'strict' });
+
   };
 
   // Get cookie
