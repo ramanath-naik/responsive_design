@@ -13,6 +13,9 @@ import Careers, { careersLoader } from "./pages/Careers";
 import CareerDetails, { careerDetailsLoder } from "./pages/CareerDetails";
 import CareerError from "./pages/CareerError";
 
+import { CookiesProvider } from 'react-cookie';
+import Cookie from './Cookie';
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path ="/" element={<RootLayout/>}>
@@ -41,7 +44,12 @@ const router = createBrowserRouter(
 function App() {
 
   return (
-  <RouterProvider router={router}/>
+  // <RouterProvider router={router}/>
+  <div style={{margin:'40px'}}>
+  <CookiesProvider>
+    <Cookie/>
+  </CookiesProvider>
+  </div>
   
   );
 }
